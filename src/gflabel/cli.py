@@ -36,7 +36,7 @@ from build123d import (
     extrude,
 )
 
-from . import fragments
+from gflabel import fragments
 from .bases import LabelBase
 from .bases.cullenect import CullenectBase
 from .bases.modern import ModernBase

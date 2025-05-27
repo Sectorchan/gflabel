@@ -9,6 +9,7 @@ import logging
 import re
 import textwrap
 import zipfile
+from build123d import Color
 from abc import ABCMeta, abstractmethod
 from collections.abc import Callable
 from math import cos, radians, sin
@@ -73,6 +74,7 @@ DRIVES = {
     "square",
     "triangle",
     "torx",
+    "spax",
     "security",
     "phillipsslot",
 }
@@ -898,6 +900,14 @@ def drive_shape(shape: str, radius: float = 1, outer_radius: float = 1) -> Sketc
                 SlotCenterToCenter(0.82, 0.19)
             with PolarLocations(0.41, 6, start_angle=360 / 12):
                 Circle(0.11, mode=Mode.SUBTRACT)
+        elif shape == "spax":
+            Circle(0.74 /2 )
+            with PolarLocations(0, 3):
+                 SlotCenterToCenter(0.82, 0.19)
+            with PolarLocations(0.41, 6, start_angle=360 / 12):
+                Circle(0.11, mode=Mode.SUBTRACT)
+            Circle(0.2, mode=Mode.SUBTRACT)
+            
         elif shape == "security":
             Circle(0.1)
             positive = True
