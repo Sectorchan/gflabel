@@ -1,5 +1,7 @@
 # GFLabel
 
+ gflabel cullenect "{head(torx)}\nHD-20 --font-size-maximum 5{1|2} {bolt(16,countrsink)}\n VZ 3,5 x 16" -o spax.svg 
+
 Generates 3d printable labels for labelled [gridfinity][gridfinity] bins (such as
 [pred][pred], [Cullen J Webb][webb] and [Modern Gridfinity Case][modern] labels), and similar
 generate-smallish-printable-label uses. Leverages [build123d][build123d].
@@ -237,6 +239,7 @@ Options for controlling font rendering are:
 | `--font-size NUMBER` | Specifies a fixed height (in mm) for the font on the label. Text will always be rendered at this size, even if it causes the text to not fit. Using this can help text-size consistency over many labels, as otherwise the shorter text labels may end up at a larger scale (because they can fill the vertical without over-running it's available space).
 | `--font-size-maximum NUMBER` | Specifies a _maximum_ font size. Text won't be allowed to go larger than this, but text can be shrunk to fit if it would otherwise overrun it's label area. This can help text-size disparity over many labels in cases where some of them are much longer, and you can tolerate them being shrunken. This is used to generate the electrical symbol examples.
 
+
 ### Symbols/Fragments
 
 Along with text, you can add symbols and features to a label by specifying
@@ -266,6 +269,11 @@ A list of all the fragments currently recognised:
 | washer            | Circular washer with a circular hole.                             |
 | cullbolt          | Alternate bolt representation incorporating screw drive, with fixed length, as used by the [Cullenect][cullenect] system. |
 | `\|` (pipe)       | Denotes a column edge, where the label should be split. You can specify relative proportions for the columns, as well as specifying the column alignment. |
+|small() | Resizes the string of the factor 0.5 |
+|smedium() | Resizes the string of the factor 0.75 |
+|large() | Resizes the string of the factor 1.5 |
+|xlarge() | Resizes the string of the factor 1.75 |
+
 
 A basic set of examples showing the usage of some of these:
 

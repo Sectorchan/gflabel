@@ -1299,3 +1299,34 @@ if __name__ == "__main__":
         desc = _clean(frag.description)
         names = _clean(", ".join(frag.names))
         print(f"| {names:{maxname}} | {desc:{desc_len}} |")
+        
+@fragment("xsmall", examples=["{xsmall(HD-20)}"])
+def _fragment_xsmall_text(height: float, _maxsize: float, *args: str) -> Sketch:
+    text = " ".join(args)
+    with BuildSketch() as sketch:
+        Text(text, font_size=height * 0.25) 
+    return sketch.sketch
+@fragment("small", examples=["{small(HD-20)}"])
+def _fragment_small_text(height: float, _maxsize: float, *args: str) -> Sketch:
+    text = " ".join(args)
+    with BuildSketch() as sketch:
+        Text(text, font_size=height * 0.5) 
+    return sketch.sketch
+@fragment("smedium", examples=["{smedium(HD-20)}"])
+def _fragment_smedium_text(height: float, _maxsize: float, *args: str) -> Sketch:
+    text = " ".join(args)
+    with BuildSketch() as sketch:
+        Text(text, font_size=height * 0.75) 
+    return sketch.sketch
+@fragment("large", examples=["{large(HD-20)}"])
+def _fragment_large_text(height: float, _maxsize: float, *args: str) -> Sketch:
+    text = " ".join(args)
+    with BuildSketch() as sketch:
+        Text(text, font_size=height * 1.5) 
+    return sketch.sketch
+@fragment("xlarge", examples=["{xlarge(HD-20)}"])
+def _fragment_xlarge_text(height: float, _maxsize: float, *args: str) -> Sketch:
+    text = " ".join(args)
+    with BuildSketch() as sketch:
+        Text(text, font_size=height * 1.75) 
+    return sketch.sketch
