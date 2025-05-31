@@ -428,4 +428,5 @@ GFLabel uses (and bundles) a couple of dependencies in subdirectories:
 
 This is the label type which I used for my Gridfinity boxes:
 `gflabel pred "{head(spax)}\n{smedium(HD-20)} {1|3} {bolt(70,countersunk)}\n 5,0x70 {small(VZ)}" -o small.svg`
+
 ![](https://github.com/Sectorchan/gflabel/blob/main/small.svg)
