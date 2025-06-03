@@ -6,4 +6,8 @@ __pycache__/
 dist/
 images/
 .DS_Store
+
+# output files
 .svg
+.step
+.stl
