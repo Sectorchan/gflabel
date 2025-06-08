@@ -1318,6 +1318,12 @@ def _fragment_smedium_text(height: float, _maxsize: float, *args: str) -> Sketch
     with BuildSketch() as sketch:
         Text(text, font_size=height * 0.75) 
     return sketch.sketch
+@fragment("medium", examples=["{medium(HD-20)}"])
+def _fragment_smedium_text(height: float, _maxsize: float, *args: str) -> Sketch:
+    text = " ".join(args)
+    with BuildSketch() as sketch:
+        Text(text, font_size=height * 1.00) 
+    return sketch.sketch
 @fragment("large", examples=["{large(HD-20)}"])
 def _fragment_large_text(height: float, _maxsize: float, *args: str) -> Sketch:
     text = " ".join(args)
